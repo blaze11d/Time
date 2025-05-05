@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudo Credit Union - Online Banking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="logo">
+                    <img src="logo.png" alt="Sudo Credit Union">
+                    <h1>Sudo <span>Credit Union</span></h1>
+                </div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="username" placeholder="Enter username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Enter password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <div class="form-footer">
+                        <a href="#" id="forgotPasswordLink">Forgot password?</a>
+                        <a href="#" id="registerLink">Create account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App (hidden until login) -->
+    <div id="appContainer">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="logo.png" alt="Sudo Credit Union">
+                    <h1>Sudo <span>Credit Union</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" data-tab="dashboard"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="#" data-tab="accounts"><i class="fas fa-wallet"></i> Accounts</a></li>
+                        <li><a href="#" data-tab="transfer"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                    </ul>
+                </nav>
+                <div class="user-menu">
+                    <div class="user-profile">
+                        <img src="profile.jpg" alt="Profile" class="profile-img">
+                        <span>Jam Cassar</span>
+                    </div>
+                    <button class="btn btn-outline" id="logoutBtn">Sign Out</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-profile">
+                    <img src="profile.jpg" alt="Profile" class="profile-img-large">
+                    <h3>Jam Cassar</h3>
+                    <p>Member since 2018</p>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#" data-tab="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="#" data-tab="accounts"><i class="fas fa-wallet"></i> Accounts</a></li>
+                        <li><a href="#" data-tab="transfer"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                        <li><a href="#" data-tab="cards"><i class="fas fa-credit-card"></i> Cards</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="content-area">
+                <!-- Dashboard Tab -->
+                <div id="dashboard" class="tab-content active">
+                    <div class="welcome-banner">
+                        <h2>Welcome back, Jam!</h2>
+                        <div class="account-summary">
+                            <div class="summary-card">
+                                <span>Total Balance</span>
+                                <h3>$58,245.01</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="account-cards">
+                        <div class="account-card">
+                            <div class="account-header">
+                                <h3>Checking Account</h3>
+                                <span class="account-number">•••• 6789</span>
+                            </div>
+                            <div class="account-balance">$12,456.78</div>
+                            <div class="account-actions">
+                                <button class="btn btn-sm">Transfer</button>
+                                <button class="btn btn-sm">History</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs would go here -->
+                <div id="accounts" class="tab-content"></div>
+                <div id="transfer" class="tab-content"></div>
+                <div id="cards" class="tab-content"></div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
